@@ -3,6 +3,13 @@ import javax.swing.*;
 //First amendment
 import java.awt.*;
 import java.awt.event.*;
+
+
+/**
+ * Game Window Classs that do everything for the program
+ * @author kamalgiri
+ *
+ */
 public class GameWindow extends JFrame implements ActionListener{
 	
 	private static final long serialVersionUID = 1L;
@@ -19,6 +26,9 @@ public class GameWindow extends JFrame implements ActionListener{
 	private static String lines = "#40514E";
 	
 	//FRAMES
+	/**
+	 * creating the container that gives us the content pane
+	 */
 	private Container main = this.getContentPane();
 	private static JPanel menu_panel, game_panel;
 	private static JPanel LPieces, Board, RPieces;
@@ -28,7 +38,10 @@ public class GameWindow extends JFrame implements ActionListener{
 	
 	
 	//Constructor
-	
+	/**
+	 * Constructor for the GameWindow
+	 * @param window_title, name of the winow title for the console
+	 */
 	public GameWindow(String window_title) {
 		super(window_title);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -42,7 +55,11 @@ public class GameWindow extends JFrame implements ActionListener{
 	}
 	
 	//create_main_panel helper function
-	
+	/**
+	 * Method to create the menu panel in Jpanel
+	 * @param border
+	 * @return
+	 */
 	private JPanel create_main_panel(boolean border) {
 		JPanel panel = new JPanel();
 		panel.setLayout(new GridBagLayout());
@@ -57,7 +74,9 @@ public class GameWindow extends JFrame implements ActionListener{
 	}
 	
 	//Create the Menu Panel
-	
+	/**
+	 * method to add the menu container in Jpanel
+	 */
 	private void add_menu_container() {
 		menu_panel = create_main_panel(true);
 		menu_panel.setPreferredSize(menu_size);
@@ -72,6 +91,12 @@ public class GameWindow extends JFrame implements ActionListener{
 	}
 	
 	//Adding buttons to the Menu Panel
+	/**
+	 * method to add buttons
+	 * @param text
+	 * @param x
+	 * @return
+	 */
 	
 	private JButton add_button(String text, int x) {
 		JButton button = new JButton(text);
@@ -85,6 +110,9 @@ public class GameWindow extends JFrame implements ActionListener{
 		menu_panel.add(button, c);
 		return button;
 	}
+	/**
+	 * Method used to make everything visible in board
+	 */
 	
 	public void show_ui() {
 		this.setSize(d_size);
@@ -94,6 +122,9 @@ public class GameWindow extends JFrame implements ActionListener{
 	}
 
 	@Override
+	/**
+	 * Is not doing anything right now
+	 */
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
